@@ -1,0 +1,28 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+filterwarnings = [
+    "error",
+    "ignore::DeprecationWarning:",
+    # note the use of single quote below to denote "raw" strings in TOML
+    'ignore:Using or importing the ABCs:DeprecationWarning',
+]
+
+
+[tool.black]
+line-length = 100
+include = '\.pyi?$'
+exclude = '''
+/(
+      \.eggs         # exclude a few common directories in the root of the project
+    | \.git
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+'''
