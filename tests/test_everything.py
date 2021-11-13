@@ -39,4 +39,4 @@ def test_testing_loop(net):
 
 def test_predict():
     x = np.zeros((28, 28))
-    predict(x, "mnist_cnn_final.pt")
+    predict(x, "mnist_cnn.pt")
