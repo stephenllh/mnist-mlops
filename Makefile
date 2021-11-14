@@ -25,6 +25,3 @@ deploy:
 .PHONY: streamlit
 streamlit:
 	streamlit run streamlit/st_app.py
-
-
-all: env install style test
