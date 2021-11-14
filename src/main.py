@@ -9,12 +9,7 @@ from src.net import Net
 
 
 def get_loader(batch_size, train_mode, download=True, **kwargs):
-    transform = transforms.Compose(
-        [
-            transforms.RandomAffine(degrees=(-5, 5), translate=(0.1, 0.3), scale=(0.75, 1.2)),
-            transforms.ToTensor(),
-        ]
-    )
+    transform = transforms.Compose([transforms.ToTensor()])
     dataset = datasets.MNIST("./data", train=train_mode, download=download, transform=transform)
     return torch.utils.data.DataLoader(dataset, batch_size=batch_size, **kwargs)
 

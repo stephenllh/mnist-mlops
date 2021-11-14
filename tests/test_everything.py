@@ -1,4 +1,6 @@
 import pytest
+import os
+import requests
 import torch
 import numpy as np
 from src.net import Net
@@ -39,4 +41,10 @@ def test_testing_loop(net):
 
 def test_predict():
     x = np.zeros((28, 28))
-    predict(x, "mnist_cnn.pt")
+    checkpoint_path = "mnist_cnn.pt"
+    if not os.path.exists(checkpoint_path):
+        url = "https://github.com/stephenllh/mnist-mlops/releases/latest/download/mnist_cnn.pt"
+        r = requests.get(url, allow_redirects=True)
+        open(checkpoint_path, 'wb').write(r.content)
+    log_preds = predict(x, checkpoint_path)
+    assert log_preds.shape == (1, 10)
