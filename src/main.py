@@ -121,8 +121,7 @@ def main():
 
     device = torch.device("cuda" if use_cuda else "cpu")
 
-    if use_cuda:
-        cuda_kwargs = {"num_workers": 1, "pin_memory": True, "shuffle": True}
+    cuda_kwargs = {"num_workers": 1, "pin_memory": True, "shuffle": True} if use_cuda else {}
 
     train_loader = get_loader(batch_size=args.batch_size, train_mode=True, **cuda_kwargs)
     test_loader = get_loader(batch_size=args.test_batch_size, train_mode=False, **cuda_kwargs)

@@ -12,6 +12,6 @@ def predict(img_numpy, ckpt_path):
 
     net = Net().to(device)
     net.eval()
-    net.load_state_dict(torch.load(ckpt_path, map_location=torch.device(device)))  
+    net.load_state_dict(torch.load(ckpt_path, map_location=torch.device(device)))
     log_preds = net(img_torch)
     return log_preds
