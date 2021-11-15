@@ -25,5 +25,5 @@ class Net(nn.Module):
         x = F.relu(x)
         x = self.dropout2(x)
         x = self.fc2(x)
-        log_pred = F.log_softmax(x, dim=1)
-        return log_pred
+        log_preds = F.log_softmax(x, dim=1)
+        return log_preds
