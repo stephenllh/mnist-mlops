@@ -4,9 +4,8 @@ from torchvision import transforms
 from src.net import Net
 
 
-def predict(img_numpy, ckpt_path):
+def predict(img_numpy, ckpt_path, device="cpu"):
     transform = transforms.Compose([transforms.ToTensor()])
-    device = "cuda" if torch.cuda.is_available() else "cpu"
     img_torch = transform(img_numpy.astype(np.float32))
     img_torch = img_torch.unsqueeze(dim=0).to(device)
 
