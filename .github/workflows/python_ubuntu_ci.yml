@@ -2,9 +2,7 @@ name: Python Ubuntu CI
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches: [ beta ]
 
 jobs:
   build:
@@ -28,10 +26,15 @@ jobs:
     - name: Run formatting
       run: make style
 
+    - name: Branch Merge
+      uses: everlytic/branch-merge@1.1.2
+      with:
+        github_token: $\{{ secrets.GITHUB_TOKEN }}
+        source_ref: beta
+        target_branch: main
+
     - name: GitHub Push
       uses: ad-m/github-push-action@v0.6.0
       with:
         github_token: $\{{ secrets.GITHUB_TOKEN }}
         branch: main
-      
-        
