@@ -17,24 +17,24 @@ jobs:
       with:
         python-version: 3.7
       
-    - name: Install dependencies
-      run: make install
+#     - name: Install dependencies
+#       run: make install
       
-    - name: Run tests
-      run: make test
+#     - name: Run tests
+#       run: make test
       
-    - name: Run formatting
-      run: make style
+#     - name: Run formatting
+#       run: make style
 
-    - name: Branch Merge
-      uses: everlytic/branch-merge@1.1.2
+    - name: Merge to main branch
+      uses: devmasx/merge-branch@1.4.0
       with:
-        github_token: $\{{ secrets.GITHUB_TOKEN }}
-        source_ref: beta
         target_branch: main
-
-    - name: GitHub Push
-      uses: ad-m/github-push-action@v0.6.0
-      with:
+        from_branch: beta
         github_token: $\{{ secrets.GITHUB_TOKEN }}
-        branch: main
+
+#     - name: GitHub Push
+#       uses: ad-m/github-push-action@v0.6.0
+#       with:
+#         github_token: $\{{ secrets.GITHUB_TOKEN }}
+#         branch: main
