@@ -26,13 +26,13 @@ jobs:
 #     - name: Run formatting
 #       run: make style
 
-    - name: Merge to main branch
-      uses: devmasx/merge-branch@1.4.0
-      with:
-        type: now
-        from_branch: beta
-        target_branch: main
-        github_token: $\{{ secrets.GITHUB_TOKEN }}
+#     - name: Merge to main branch
+#       uses: devmasx/merge-branch@1.4.0
+#       with:
+#         type: now
+#         from_branch: beta
+#         target_branch: main
+#         github_token: $\{{ secrets.GITHUB_TOKEN }}
 
 #     - name: GitHub Push
 #       uses: ad-m/github-push-action@v0.6.0
