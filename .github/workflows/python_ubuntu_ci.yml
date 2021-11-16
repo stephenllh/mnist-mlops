@@ -2,9 +2,7 @@ name: Python Ubuntu CI
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches: [ beta ]
 
 jobs:
   build:
@@ -19,19 +17,25 @@ jobs:
       with:
         python-version: 3.7
       
-    - name: Install dependencies
-      run: make install
+#     - name: Install dependencies
+#       run: make install
       
-    - name: Run tests
-      run: make test
+#     - name: Run tests
+#       run: make test
       
-    - name: Run formatting
-      run: make style
+#     - name: Run formatting
+#       run: make style
 
-    - name: GitHub Push
-      uses: ad-m/github-push-action@v0.6.0
-      with:
-        github_token: $\{{ secrets.GITHUB_TOKEN }}
-        branch: main
-      
-        
+#     - name: Merge to main branch
+#       uses: devmasx/merge-branch@1.4.0
+#       with:
+#         type: now
+#         from_branch: beta
+#         target_branch: main
+#         github_token: $\{{ secrets.GITHUB_TOKEN }}
+
+#     - name: GitHub Push
+#       uses: ad-m/github-push-action@v0.6.0
+#       with:
+#         github_token: $\{{ secrets.GITHUB_TOKEN }}
+#         branch: main
