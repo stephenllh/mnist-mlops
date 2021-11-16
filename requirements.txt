@@ -7,3 +7,4 @@ pytest==6.2.5
 streamlit==0.75.0
 streamlit_drawable_canvas==0.8.0
 pillow==7.2.0
+opencv_python_headless==4.3.0.36
