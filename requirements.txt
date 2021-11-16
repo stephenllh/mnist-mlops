@@ -1,4 +1,4 @@
---find-links https://download.pytorch.org/whl/torch_stable.html
+--find-links https://download.pytorch.org/whl/torch_stable.html0
 torch==1.6.0+cpu
 torchvision==0.7.0+cpu
 black==20.8b1
