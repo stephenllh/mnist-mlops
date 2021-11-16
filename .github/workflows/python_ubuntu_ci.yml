@@ -29,8 +29,9 @@ jobs:
     - name: Merge to main branch
       uses: devmasx/merge-branch@1.4.0
       with:
-        target_branch: main
+        type: now
         from_branch: beta
+        target_branch: main
         github_token: $\{{ secrets.GITHUB_TOKEN }}
 
 #     - name: GitHub Push
