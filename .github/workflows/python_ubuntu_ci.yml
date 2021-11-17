@@ -17,11 +17,11 @@ jobs:
       with:
         python-version: 3.7
       
-#     - name: Install dependencies
-#       run: make install
+    - name: Install dependencies
+      run: make install
       
-#     - name: Run tests
-#       run: make test
+    - name: Run tests
+      run: make test
       
-#     - name: Run formatting
-#       run: make style
+    - name: Run formatting
+      run: make format
