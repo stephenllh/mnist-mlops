@@ -9,7 +9,7 @@ install:
 	pip install -e .
 
 
-style:
+format:
 	black .
 	flake8 .
 
@@ -24,4 +24,4 @@ deploy:
 
 .PHONY: streamlit
 streamlit:
-	streamlit run streamlit/st_app.py
+	streamlit run streamlit/app.py
